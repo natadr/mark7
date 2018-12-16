@@ -1,4 +1,7 @@
 pipeline {
+    agent {
+        image 'none'
+    }
     environment {
         CI = true
     }
