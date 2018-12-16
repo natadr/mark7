@@ -1,5 +1,11 @@
 pipeline {
-    agent any
+    agent{
+        docker {
+            image 'ruby'
+            args '--link selenium'
+        }
+    }    
+
     environment {
         CI = true
     }
