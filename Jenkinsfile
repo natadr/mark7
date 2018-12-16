@@ -1,6 +1,8 @@
 pipeline {
     agent {
-        'none'
+        docker {
+            image 'ruby'
+        }
     }
     environment {
         CI = true
