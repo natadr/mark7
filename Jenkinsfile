@@ -1,11 +1,12 @@
 pipeline {
-    agent 'ruby'
     environment {
         CI = true
     }
-    stages('Bundle') {
-        steps {
-            sh "bundle install"
+    stages {
+        stage('Bundle') {
+            steps {
+                sh "bundle install"
+            }
         }
     }
 }
