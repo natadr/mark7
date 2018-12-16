@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        image 'none'
+        'none'
     }
     environment {
         CI = true
