@@ -17,12 +17,13 @@ pipeline {
         }
         stage('Run Features') {
             steps {
-
-                try {
-                    sh "cucumber -p ci"
-                } finally {
-                    cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'log', sortingMethod: 'ALPHABETICAL'
-                }                           
+                script {
+                    try {
+                        sh "cucumber -p ci"
+                    } finally {
+                        cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'log', sortingMethod: 'ALPHABETICAL'
+                    }     
+                }                     
             }
         }
         stage('Read to Production?') {
